@@ -1,23 +1,17 @@
-import logo from './logo.svg';
+import React, {useState} from 'react'
 import './App.css';
+import ListImage from "./ListImage";
 
 function App() {
+    const [images, setImages] = useState([
+        {id: 1, isActive: false},
+        {id: 2, isActive: false},
+        {id: 3, isActive: false},
+        {id: 4, isActive: false}
+        ])
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className="container">
+        <ListImage images={images} setImages={setImages}/>
     </div>
   );
 }
